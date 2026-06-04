@@ -22,7 +22,7 @@ st.set_page_config(
 # Constants
 # ---------------------------------------------------------------------------
 DEFAULT_PDF = os.path.join(
-    os.path.dirname(__file__), "data", "manuel_employe_techcorp.pdf"
+    os.path.dirname(__file__), "data", "manuel_employe_demo.pdf"
 )
 
 
@@ -125,17 +125,17 @@ if not api_key:
 # ---------------------------------------------------------------------------
 if st.session_state.vector_store is None:
     if os.path.exists(DEFAULT_PDF):
-        st.session_state.current_pdf_name = "manuel_employe_techcorp.pdf"
+        st.session_state.current_pdf_name = "manuel_employe_demo.pdf"
         with st.spinner("Chargement du PDF par défaut…"):
             rebuild_index(DEFAULT_PDF)
         st.rerun()
     else:
         st.info(
             "📖 **Aucun PDF chargé.**\n\n"
-            "Le PDF de démonstration (`data/manuel_employe_techcorp.pdf`) "
+            "Le PDF de démonstration (`data/manuel_employe_demo.pdf`) "
             "n'est pas encore présent.\n\n"
             "**Pour commencer :**\n"
-            "1. Placez un fichier PDF nommé `manuel_employe_techcorp.pdf` "
+            "1. Placez un fichier PDF nommé `manuel_employe_demo.pdf` "
             "dans le dossier `data/`\n"
             "2. **Ou** uploadez un PDF via la barre latérale\n\n"
             "L'application fonctionnera avec n'importe quel document PDF."
